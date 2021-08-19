@@ -7,40 +7,32 @@
         path: '/user',
         routes: [
           {
-            name: 'login',
+            name: '登录',
             path: '/user/login',
-            component: './user/Login',
+            component: './user/login',
           },
         ],
       },
     ],
   },
   {
-    path: '/welcome',
-    name: 'welcome',
-    icon: 'smile',
-    component: './Welcome',
-  },
-  {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
-    component: './Admin',
-    routes: [
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        icon: 'smile',
-        component: './Welcome',
-      },
-    ],
-  },
-  {
-    name: 'list.table-list',
+    name: '房间列表',
     icon: 'table',
-    path: '/list',
-    component: './TableList',
+    path: '/roomers',
+    component: '@/pages/roomers',
+  },
+  {
+    name: '租客管理',
+    icon: 'table',
+    path: '/tenant',
+    component: '@/pages/tenant',
+  },
+  {
+    path: '/welcome',
+    name: '欢迎',
+    icon: 'smile',
+    hideInMenu: true,
+    component: './welcome',
   },
   {
     path: '/',
