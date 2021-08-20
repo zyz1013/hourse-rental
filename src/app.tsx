@@ -105,9 +105,9 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     title: 'DEMO',
     rightContentRender: () => <RightContent />,
     disableContentMargin: false,
-    waterMarkProps: {
-      content: initialState?.currentUser?.name,
-    },
+    // waterMarkProps: {
+    //   content: initialState?.currentUser?.name,
+    // },
     onPageChange: () => {
       const { location } = history;
       // 如果没有登录，重定向到 login

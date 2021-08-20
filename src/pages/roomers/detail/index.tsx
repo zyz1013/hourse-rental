@@ -1,6 +1,4 @@
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, List } from 'antd';
-import { history } from 'umi';
 
 const Tenant: React.FC = () => {
   const data = [
@@ -58,26 +56,7 @@ const Tenant: React.FC = () => {
     },
   ];
 
-  return (
-    <PageContainer breadcrumbRender={false}>
-      <List
-        grid={{ gutter: 16, column: 6 }}
-        dataSource={data}
-        renderItem={(item) => (
-          <List.Item key={item.id}>
-            <Card
-              title={`${item.roomer}`}
-              actions={[<a>修改</a>, <a>删除</a>]}
-              onClick={() => history.push('/roomers/detail/1')}
-            >
-              <div>{item.name}</div>
-              <div>{`租金:${item.rent}`}</div>
-            </Card>
-          </List.Item>
-        )}
-      />
-    </PageContainer>
-  );
+  return <PageContainer>roomer详情</PageContainer>;
 };
 
 export default Tenant;

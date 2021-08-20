@@ -19,7 +19,13 @@
     name: '房间列表',
     icon: 'table',
     path: '/roomers',
-    component: '@/pages/roomers',
+    component: './roomers/',
+  },
+  {
+    name: '详情',
+    path: '/roomers/detail/:id',
+    component: './roomers/detail/',
+    hideInMenu: true,
   },
   {
     name: '租客管理',

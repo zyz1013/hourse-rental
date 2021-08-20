@@ -1,6 +1,7 @@
 import { PageContainer } from '@ant-design/pro-layout';
 import { Badge, Table } from 'antd';
 import type { ColumnsType } from 'antd/lib/table';
+import { history } from 'umi';
 
 const Tenant: React.FC = () => {
   const data = [
@@ -96,7 +97,15 @@ const Tenant: React.FC = () => {
       dataIndex: 'actions',
       width: 100,
       render: () => {
-        return <a>编辑</a>;
+        return (
+          <a
+            onClick={() => {
+              history.push('/roomers/detail/1');
+            }}
+          >
+            编辑
+          </a>
+        );
       },
     },
   ];
