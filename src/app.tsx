@@ -108,13 +108,13 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     // waterMarkProps: {
     //   content: initialState?.currentUser?.name,
     // },
-    onPageChange: () => {
-      const { location } = history;
-      // 如果没有登录，重定向到 login
-      if (!initialState?.currentUser && location.pathname !== loginPath) {
-        history.push(loginPath);
-      }
-    },
+    // onPageChange: () => {
+    //   const { location } = history;
+    //   // 如果没有登录，重定向到 login
+    //   if (!initialState?.currentUser && location.pathname !== loginPath) {
+    //     history.push(loginPath);
+    //   }
+    // },
     menuHeaderRender: undefined,
     ...initialState?.settings,
   };
