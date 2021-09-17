@@ -1,17 +1,18 @@
-import { PageContainer } from '@ant-design/pro-layout';
-import { Badge, Card, Table } from 'antd';
+import Table from '@/components/table';
+import { Badge } from 'antd';
 import type { ColumnsType } from 'antd/lib/table';
-import { useResizeDetector } from 'react-resize-detector';
 import { history } from 'umi';
 
 const Tenant: React.FC = () => {
-  const { height = 400, ref } = useResizeDetector();
-  const data = [
-    {
-      id: 0,
-      name: '张三',
+  const data = [];
+
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < 200; i++) {
+    data.push({
+      id: i,
+      name: `张三${i}`,
       gender: '男',
-      roomer: '201',
+      roomer: i,
       rented: 1,
       startTime: '2021-01-02',
       endTime: '2022-01-02',
@@ -19,164 +20,8 @@ const Tenant: React.FC = () => {
       water: 100,
       electric: 200,
       remark: '上月水电未交',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-    {
-      id: 1,
-      name: '李四',
-      gender: '男',
-      roomer: '202',
-      rented: 1,
-      startTime: '2021-01-02',
-      endTime: '2021-07-02',
-      rent: 1500,
-      water: 100,
-      electric: 200,
-      remark: '',
-    },
-  ];
+    });
+  }
 
   const columns: ColumnsType<any> = [
     {
@@ -255,20 +100,7 @@ const Tenant: React.FC = () => {
     },
   ];
 
-  return (
-    <PageContainer>
-      <div style={{ height: 500 }}>
-        <Card
-          style={{ display: 'flex', flexDirection: 'column', height: '100%', flex: 1 }}
-          bodyStyle={{ display: 'flex', flexDirection: 'column', height: '100%', flex: 1 }}
-        >
-          <div ref={ref} style={{ height: '100%' }}>
-            <Table dataSource={data} columns={columns} scroll={{ y: height - 77 - 64 }}></Table>
-          </div>
-        </Card>
-      </div>
-    </PageContainer>
-  );
+  return <Table rowKey="id" dataSource={data} columns={columns}></Table>;
 };
 
 export default Tenant;
