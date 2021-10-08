@@ -1,4 +1,6 @@
+import MeetingTimePicker from '@/components/DatePicker';
 import { PageContainer } from '@ant-design/pro-layout';
+import { Button, Card, Form, Select } from 'antd';
 
 const Tenant: React.FC = () => {
   const data = [
@@ -56,7 +58,36 @@ const Tenant: React.FC = () => {
     },
   ];
 
-  return <PageContainer>roomer详情</PageContainer>;
+  return (
+    <PageContainer>
+      <Card>
+        <Form
+          onFinish={(values) => {
+            console.log(values);
+          }}
+        >
+          <Form.Item label="机构名称">
+            <Select></Select>
+          </Form.Item>
+          <Form.Item
+            name="meetingTime"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <MeetingTimePicker></MeetingTimePicker>
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      </Card>
+    </PageContainer>
+  );
 };
 
 export default Tenant;
